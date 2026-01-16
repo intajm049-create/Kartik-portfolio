@@ -1,0 +1,114 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Wlcome to my official Website...">
+    <title>Code with Kartik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        
+        <div class="logo">
+            <h1>Code with Kartik</h1>
+        </div>                           
+
+        
+        <div class="search-box">
+       
+
+                <form action="https://www.google.com/search" method="get" target="_blank">
+		 	<input type="hidden" name="sitesearch" value="w3schools.com">
+
+		 	 <input type="text" name="q" id="srch" placeholder="search Html,css,js.." required>
+		 	 
+
+
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+         
+        <nav class="nav-menu">
+            <ul class="menu-links">
+                <li><a href="home.html">About</a></li>
+                <li><a href="Skills.html">Skills</a></li>
+                <li><a href="Examples.html">Examples</a></li>
+                <li><a href="menu.html">My Tutorial Notes</a></li>
+            </ul>
+
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+  <section>
+    <div class ="typing-section">
+    <h2><span id="typing"></span></h2>
+    </div>
+</section>
+
+<footer id="ft">
+    <h2  id="sec1">NEVER STOP LEARNING BECAUSE LIFE NEVER STOPS TEACHING...</h2>
+     
+</footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link (optional - better UX on mobile)
+        document.querySelectorAll('.menu-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+  
+    const text = "Hello, I am Kartik. I am a Front End Developer and Also Student.";
+    let index = 0;
+    const speed = 80; // typing speed (ms)
+
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, speed);
+        } else{
+            setTimeout(() =>{ document.getElementById("typing").innerHTML ="";
+
+                index = 0;
+                typeEffect();
+            }, 2000);
+        }
+    }
+
+    window.onload = typeEffect;
+
+
+    </script>
+
+</body>
+</html> 

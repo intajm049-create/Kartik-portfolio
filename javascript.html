@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Notes 2026</title>
+  <style>
+    :root {
+      --primary: #6366f1;;
+      --primary-dark: #7c3aed;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --gray: #64748b;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem 2.5rem;
+      position: relative;
+    }
+    header h1 { margin: 0; font-size: 3rem; }
+    header p { font-size: 1.25rem; opacity: 0.95; margin-top: 0.6rem; }
+    .back-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      text-decoration: none;
+      background-color: rgba(255,255,255,0.25);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+    h2 {
+      background: var(--primary);
+      color: white;
+      margin: 0;
+      padding: 1.2rem 2rem;
+      font-size: 1.6rem;
+    }
+    .content {
+      padding: 2rem;
+    }
+    .definition {
+      background: #f3e8ff;
+      border-left: 6px solid var(--primary);
+      padding: 1.2rem 1.8rem;
+      margin: 1.5rem 0;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+    }
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 1.5rem;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: 'Consolas', monospace;
+      font-size: 0.97rem;
+      margin: 1.5rem 0;
+      box-shadow: inset 0 3px 10px rgba(0,0,0,0.4);
+    }
+    .live-example {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      border: 1px dashed #cbd5e1;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--gray);
+      font-size: 30px;
+      text-transform: uppercase;
+      border-top: 1px solid #e2e8f0;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.4rem; }
+      .back-btn { top: 20px; right: 20px; padding: 8px 16px; font-size: 0.9rem; }
+      .content { padding: 1.5rem; }
+    }
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            right: 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+          }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="menu.html" class="back-btn">⬅ Menu</a>
+
+  
+  <h1> JavaScript Notes 2026</h1>
+  <p>Complete Beginner to Pro Guide</p>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>1. Hello World & Console</h2>
+    <div class="content">
+      <div class="definition">
+        JavaScript is the programming language of the web — adds interactivity to HTML pages.
+      </div>
+      <pre><code>// In browser console or &lt;script&gt; tag
+console.log("Hello, World!");
+
+// Alert (popup)
+alert("Welcome Md!");</code></pre>
+      <div class="live-example">
+        <button onclick="alert('Hello from JavaScript!')">Click me</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Variables (let, const, var)</h2>
+    <div class="content">
+      <div class="definition">
+        Store data — <code>const</code> cannot be reassigned, <code>let</code> can, <code>var</code> is old style.
+      </div>
+      <pre><code>let age = 22;
+const name = "Md";
+var oldWay = "avoid this";
+
+age = 23;      // OK
+// name = "Ali"; // Error</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Data Types</h2>
+    <div class="content">
+      <div class="definition">
+        Primitive: string, number, boolean, null, undefined, bigint, symbol<br>
+        Non-primitive: object (array, function, etc.)
+      </div>
+      <pre><code>let str = "Biratnagar";
+let num = 25;
+let bool = true;
+let nothing = null;
+let notDefined;
+let arr = [1, 2, 3];
+let obj = { city: "Biratnagar", country: "Nepal" };</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Operators & Template Literals</h2>
+    <div class="content">
+      <div class="definition">
+        Math, comparison, logical + modern string interpolation with backticks.
+      </div>
+      <pre><code>let a = 10, b = 3;
+console.log(a + b);     // 13
+console.log(a > b);     // true
+
+let city = "Biratnagar";
+console.log(`Hello from ${city} in 2026!`);</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Conditionals (if / else, ternary, switch)</h2>
+    <div class="content">
+      <div class="definition">
+        Make decisions in code.
+      </div>
+      <pre><code>let score = 85;
+
+if (score >= 90) {
+    console.log("A+");
+} else if (score >= 60) {
+    console.log("Pass");
+} else {
+    console.log("Try again");
+}
+
+// Ternary
+let result = score >= 40 ? "Pass" : "Fail";
+
+// Switch
+let day = 3;
+switch (day) {
+    case 1: console.log("Sunday"); break;
+    default: console.log("Weekday");
+}</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Loops (for, while, for...of, for...in)</h2>
+    <div class="content">
+      <div class="definition">
+        Repeat actions — modern loops are cleaner.
+      </div>
+      <pre><code>for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+const fruits = ["apple", "mango", "banana"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+const person = { name: "Md", city: "Biratnagar" };
+for (let key in person) {
+    console.log(key, person[key]);
+}</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Functions (Traditional & Arrow)</h2>
+    <div class="content">
+      <div class="definition">
+        Reusable blocks of code — arrow functions are shorter & great for callbacks.
+      </div>
+      <pre><code>function greet(name) {
+    return `Hello ${name}!`;
+}
+
+const add = (a, b) => a + b;
+
+console.log(greet("Md"));     // Hello Md!
+console.log(add(5, 7));        // 12</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. Arrays & Array Methods</h2>
+    <div class="content">
+      <div class="definition">
+        Powerful methods: map, filter, reduce, find, forEach, etc.
+      </div>
+      <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(n => n * 2);          // [2,4,6,8,10]
+const evens = numbers.filter(n => n % 2 === 0);   // [2,4]
+const sum = numbers.reduce((acc, n) => acc + n, 0); // 15
+
+numbers.forEach(n => console.log(n));</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>9. Objects & Destructuring</h2>
+    <div class="content">
+      <div class="definition">
+        Key-value pairs — modern syntax makes them easier to work with.
+      </div>
+      <pre><code>const user = {
+    name: "Md",
+    age: 22,
+    city: "Biratnagar"
+};
+
+const { name, city } = user;
+console.log(name, city);   // Md Biratnagar
+
+// Spread operator
+const updated = { ...user, age: 23 };</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>10. DOM Manipulation</h2>
+    <div class="content">
+      <div class="definition">
+        JavaScript changes HTML/CSS dynamically.
+      </div>
+      <pre><code>// Select elements
+const title = document.querySelector("h1");
+title.textContent = "Updated Title";
+title.style.color = "#8b5cf6";
+
+// Create element
+const btn = document.createElement("button");
+btn.textContent = "Click me";
+document.body.appendChild(btn);</code></pre>
+      <div class="live-example">
+        <button onclick="this.textContent='Clicked!'">Change my text</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>11. Events</h2>
+    <div class="content">
+      <div class="definition">
+        Respond to user actions (click, input, submit, etc.).
+      </div>
+      <pre><code>button.addEventListener("click", () => {
+    alert("Button clicked!");
+});
+
+input.addEventListener("input", (e) => {
+    console.log(e.target.value);
+});</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>12. Promises, async/await</h2>
+    <div class="content">
+      <div class="definition">
+        Handle asynchronous code (fetch data, timers, etc.) cleanly.
+      </div>
+      <pre><code>// Promise
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Done!"), 1500);
+});
+
+// async/await
+async function fetchData() {
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const data = await res.json();
+        console.log(data);
+    } catch (err) {
+        console.error(err);
+    }
+}</code></pre>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Happy Coding Md! • Same modern style as your other notes • Practice DOM & events a lot! 🚀<br>
+  Biratnagar • January 2026
+</footer>
+
+</body>
+</html>

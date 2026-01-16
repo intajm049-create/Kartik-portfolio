@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Full Notes 2026</title>
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --gray: #64748b;
+      --code-bg: #1e293b;
+      --code-text: #e2e8f0;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    header h1 { margin: 0; font-size: 2.8rem; }
+    header p { font-size: 1.2rem; opacity: 0.95; margin-top: 0.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    h2 {
+      background: var(--primary);
+      color: white;
+      margin: 0;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+    }
+    .content {
+      padding: 1.8rem 2rem;
+    }
+    .definition {
+      background: #e0f2fe;
+      border-left: 5px solid var(--primary);
+      padding: 1rem 1.5rem;
+      margin: 1.2rem 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 1.4rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.95rem;
+      margin: 1.4rem 0;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+    }
+    code.inline { background: #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; }
+    .tip {
+      background: #fefce8;
+      border-left: 5px solid #ca8a04;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    footer {
+      text-align: center;
+      text-transform: uppercase;
+      padding: 2.5rem 1rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .content { padding: 1.5rem; }
+    }
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            right: 20px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HTML Full Notes 2026</h1>
+  <p>Complete Beginner to Pro Guide </p>
+</header>
+  <a href="menu.html" class="back-btn">⬅ Menu</a>
+
+<div class="container">
+
+  <section>
+    <h2>1. What is HTML?</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> HTML (HyperText Markup Language) is the standard language for creating web pages. It describes the structure and content using tags/elements.
+      </div>
+      <pre><code><span style="color:#93c5fd">// Basic skeleton (must have in every page)</span>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Awesome Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;p&gt;This is my first real HTML page in 2026.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Headings & Paragraphs</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> Headings (&lt;h1&gt; to &lt;h6&gt;) show importance/hierarchy. &lt;p&gt; is for normal text paragraphs.
+      </div>
+      <pre><code>&lt;h1&gt;Biggest Title (Main Heading)&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Sub-section&lt;/h3&gt;
+&lt;p&gt;This is a paragraph. You can write long text here.&lt;/p&gt;
+
+&lt;p&gt;This line has &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;New line with &lt;br&gt; break&lt;br&gt;here.&lt;/p&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Links & Images</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> &lt;a&gt; creates hyperlinks. &lt;img&gt; shows pictures (always use alt for accessibility).
+      </div>
+      <pre><code>&lt;a href="https://google.com"&gt;Go to Google&lt;/a&gt;
+
+&lt;a href="https://youtube.com" target="_blank"&gt;Open YouTube (new tab)&lt;/a&gt;
+
+&lt;img src="https://picsum.photos/400/300" alt="Beautiful random photo" width="350"&gt;
+
+&lt;figure&gt;
+  &lt;img src="https://picsum.photos/600/400" alt="Mountain view"&gt;
+  &lt;figcaption&gt;Beautiful mountain landscape&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Lists (Unordered & Ordered)</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> &lt;ul&gt; = bullet points, &lt;ol&gt; = numbered list, &lt;li&gt; = each item.
+      </div>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Wake up&lt;/li&gt;
+  &lt;li&gt;Code HTML&lt;/li&gt;
+  &lt;li&gt;Sleep&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>5. Tables</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> Tables show data in rows & columns. Use &lt;thead&gt;, &lt;tbody&gt; for better structure.
+      </div>
+      <pre><code>&lt;table border="1" style="border-collapse: collapse;"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Md&lt;/td&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;Biratnagar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sita&lt;/td&gt;
+      &lt;td&gt;19&lt;/td&gt;
+      &lt;td&gt;Kathmandu&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Forms (User Input)</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> Forms collect data from users. &lt;input&gt; types include text, email, password, checkbox, radio, etc.
+      </div>
+      <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="fname"&gt;First name:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="fname" name="fname" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Gender:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="radio" id="male" name="gender" value="male"&gt;
+  &lt;label for="male"&gt;Male&lt;/label&gt;
+  &lt;input type="radio" id="female" name="gender" value="female"&gt;
+  &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;input type="checkbox" id="terms" name="terms"&gt;
+  &lt;label for="terms"&gt;I agree to terms&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      <div class="tip">Tip: Always use <code>label</code> + <code>for</code> for better accessibility.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. Semantic HTML5 Tags (Very Important in 2026)</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> Semantic tags give meaning to content (better for SEO, screen readers & future maintenance).
+      </div>
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="/"&gt;Home&lt;/a&gt; |
+    &lt;a href="/about"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Main content here...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Sidebar&lt;/h3&gt;
+    &lt;p&gt;Extra info&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&copy; 2026 Md - All rights reserved&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+      <p>Other useful: &lt;section&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;mark&gt;, &lt;time&gt;, &lt;details&gt;, &lt;summary&gt;</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. HTML5 Media (Audio + Video)</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> Embed audio/video directly — controls, autoplay, loop supported.
+      </div>
+      <pre><code>&lt;video width="420" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Your browser does not support video.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;</code></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>9. Div, Span & Classes/IDs</h2>
+    <div class="content">
+      <div class="definition">
+        <strong>Definition:</strong> &lt;div&gt; = block container, &lt;span&gt; = inline container. Use class/id for CSS/JS targeting.
+      </div>
+      <pre><code>&lt;div class="card"&gt;
+  &lt;h3&gt;Product&lt;/h3&gt;
+  &lt;p&gt;This is inside a div.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Normal text. &lt;span class="highlight"&gt;This part is special&lt;/span&gt;.&lt;/p&gt;</code></pre>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  thank you!!!
+</footer>
+
+</body>
+</html>
