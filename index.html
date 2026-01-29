@@ -1,116 +1,263 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Wlcome to my official Website...">
-    <title>Code with Kartik gupta</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-    <header class="header">
-        
-        <div class="logo">
-            <h1>Code with Kartik</h1>
-        </div>                           
-
-        
-        <div class="search-box">
-       
-
-                <form action="https://www.google.com/search" method="get" target="_blank">
-		 	<input type="hidden" name="sitesearch" value="w3schools.com">
-
-		 	 <input type="text" name="q" id="srch" placeholder="search Html,css,js.." required>
-		 	 
-
-
-                <button type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-
-         
-        <nav class="nav-menu">
-            <ul class="menu-links">
-                <li><a href="home.html">About</a></li>
-                <li><a href="Skills.html">Skills</a></li>
-                <li><a href="Examples.html">Examples</a></li>
-                <li><a href="menu.html">My Tutorial Notes</a></li>
-            </ul>
-
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </nav>
-
-        
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-  <section>
-    <div class ="typing-section">
-    <h2><span id="typing"></span></h2>
-    </div>
-</section>
-
-<footer id="ft">
-    <h2  id="sec1">NEVER STOP LEARNING BECAUSE LIFE NEVER STOPS TEACHING...</h2>
-     
-</footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link (optional - better UX on mobile)
-        document.querySelectorAll('.menu-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="High-quality Class 9 notes, summaries, important questions, diagrams and formulas for Science, Mathematics, English, Social Studies, Nepali and more – aligned with Nepal curriculum 2081/82."/>
+  <title>Class 9 Notes • Nepal Curriculum | Clear & Concise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-    const text = "Hello, I am Kartik. I am a Front End Developer and Also Student.";
-    let index = 0;
-    const speed = 80; // typing speed (ms)
-
-    function typeEffect() {
-        if (index < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, speed);
-        } else{
-            setTimeout(() =>{ document.getElementById("typing").innerHTML ="";
-
-                index = 0;
-                typeEffect();
-            }, 2000);
-        }
+  <style>
+    :root {
+      --primary: #2563eb;       /* calmer blue */
+      --primary-dark: #1d4ed8;
+      --text: #0f172a;
+      --text-light: #334155;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
     }
 
-    window.onload = typeEffect;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
 
-    </script>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
+    header {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: white;
+      padding: 7rem 0 5.5rem;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: clamp(1.15rem, 3vw, 1.35rem);
+      font-weight: 300;
+      opacity: 0.95;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      padding: 4rem 0 6rem;
+    }
+
+    .subject-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.32s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e2e8f0;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-color: #cbd5e1;
+    }
+
+    .card-color {
+      height: 5px;
+    }
+
+    .card-content {
+      padding: 2rem 1.9rem 2.2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subject-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      color: var(--text);
+    }
+
+    .subject-desc {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .topics-count {
+      font-size: 0.95rem;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    /* Subject colors – slightly toned down for professionalism */
+    .color-science   { background: #059669; }
+    .color-math      { background: #d97706; }
+    .color-english   { background: #7c3aed; }
+    .color-social    { background: #db2777; }
+    .color-nepali    { background: #ea580c; }
+    .color-health    { background: #0891b2; }
+    .color-opt-math  { background: #4f46e5; }
+    .color-moral     { background: #475569; }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      font-size: 0.96rem;
+    }
+
+    .credits {
+      margin-top: 1.4rem;
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 5.5rem 0 4rem; }
+      h1 { font-size: 2.8rem; }
+      .subjects-grid { gap: 1.4rem; padding: 3rem 0 5rem; }
+    }
+
+    /* Focus for accessibility */
+    a:focus { outline: 3px solid #60a5fa; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container header-content">
+    <h1>Class 9 Notes</h1>
+    <p class="subtitle">Concise summaries • Important questions • Key formulas • Diagrams • Chapter overviews — fully aligned with Nepal's latest curriculum (2081/82)</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="subjects-grid">
+    <a href="#science" class="subject-card">
+      <div class="card-color color-science"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Science</h2>
+        <p class="subject-desc">Physics • Chemistry • Biology<br>One-page summaries, labelled diagrams, solved numericals</p>
+        <div class="topics-count">9 chapters • 140+ pages of notes</div>
+      </div>
+    </a>
+
+    <a href="#math" class="subject-card">
+      <div class="card-color color-math"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Mathematics</h2>
+        <p class="subject-desc">Complete theorems • Formula sheets<br>Most repeated & important board questions</p>
+        <div class="topics-count">12 chapters • Step-by-step solutions</div>
+      </div>
+    </a>
+
+    <a href="#english" class="subject-card">
+      <div class="card-color color-english"></div>
+      <div class="card-content">
+        <h2 class="subject-title">English</h2>
+        <p class="subject-desc">Grammar rules & shortcuts • Comprehension strategies<br>Formal letter/essay formats • Seen & unseen passages</p>
+        <div class="topics-count">Updated for 2081/82 syllabus</div>
+      </div>
+    </a>
+
+    <a href="#social" class="subject-card">
+      <div class="card-color color-social"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Social Studies</h2>
+        <p class="subject-desc">Concise notes • Map work practice<br>Key events, dates & personalities • Project tips</p>
+        <div class="topics-count">All units comprehensively covered</div>
+      </div>
+    </a>
+
+    <a href="#nepali" class="subject-card">
+      <div class="card-color color-nepali"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Nepali</h2>
+        <p class="subject-desc">व्याकरण नियमहरू • सारांश लेखन<br>साहित्यिक रचनाहरूको विश्लेषण • बारम्बार सोधिने प्रश्नोत्तर</p>
+        <div class="topics-count">Latest CDC syllabus aligned</div>
+      </div>
+    </a>
+
+    <a href="#health" class="subject-card">
+      <div class="card-color color-health"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Health, Population & Environment</h2>
+        <p class="subject-desc">Very short & short answer questions<br>Important diagrams • First aid • Adolescent health topics</p>
+        <div class="topics-count">Quick revision & scoring points</div>
+      </div>
+    </a>
+
+    <a href="#opt-math" class="subject-card">
+      <div class="card-color color-opt-math"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Optional Mathematics</h2>
+        <p class="subject-desc">Trigonometry • Vectors • Matrices & Transformations<br>Most frequently asked board-level questions</p>
+        <div class="topics-count">Designed for high scorers</div>
+      </div>
+    </a>
+
+    <a href="#moral" class="subject-card">
+      <div class="card-color color-moral"></div>
+      <div class="card-content">
+        <h2 class="subject-title">Moral Education</h2>
+        <p class="subject-desc">Value-based concise notes<br>Character building & personality development concepts</p>
+        <div class="topics-count">Easy-to-score subject material</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Prepared with care for Class 9 students following Nepal's national curriculum</p>
+    <p class="credits">Last updated: January 2026 • Made in Nepal • For educational purposes only</p>
+  </div>
+</footer>
 </body>
-</html> 
-
-
+</html>
